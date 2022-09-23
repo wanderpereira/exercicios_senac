@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula Média</title>
+    <style>
+        input {
+            display: block;
+            margin: 0.3em;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Insira o numero 1: </label>
+        <input type="text" id="n1">
+
+        <label for="">Insira o numero 2: </label>
+        <input type="text" id="n2">
+
+        <label for="">Insira o numero 3: </label>
+        <input type="text" id="n3">
+
+        <label for="">Insira o numero 4: </label>
+        <input type="text" id="n4">
+
+        <label for="">Insira o numero 5: </label>
+        <input type="text" id="n5">
+
+        <button onclick="media()">Calcular Média</button>
+    </form>
+
+    <script>
+        function media() {
+            var nums = [];
+            for (var i = 1; i <= 5; i++) {
+                nums[i] = parseInt(document.getElementById("n" + i).value);
+            }
+            var soma = nums.reduce(function (soma, i) {
+                return soma + i;
+            });
+            var media = soma / (nums.length - 1);
+            var menores = [];
+            var maiores = [];
+            for (n = 0; n <= 5; n++) {
+                if (nums[n] > media) {
+                    maiores[n] = nums[n];
+                }
+                if (nums[n] < media) {
+                    menores[n] = nums[n];
+                }
+            }
+            
+            document.write("Números digitados: " + Object.values(nums));
+            document.write("<br>Números Abaixo da média: " + Object.values(menores));
+            document.write("<br>Média dos números digitados: " + media);
+            document.write("<br>Números Acima da média: " + Object.values(maiores));
+        }    
+    </script>
+</body>
+
+</html>

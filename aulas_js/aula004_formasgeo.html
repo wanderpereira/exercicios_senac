@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formas Geométricas</title>
+    <style>
+        select {display: block; margin: 0.6em;}
+        input {display: block; margin: 0.3em;}
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="">Informe o Primeiro Lado:</label>
+        <input type="text" id="lado1">
+        <label for="">Informe o Segundo Lado:</label>
+        <input type="text"id="lado2">
+        <label for="">Escolha uma opção:</label>
+        <select id="opcao">
+            <option value="quadrado">Quadrado</option>
+            <option value="circulo">Círculo</option>
+            <option value="triangulo">Triângulo</option>
+        </select>
+        <button onclick="geo()">Gerar Resultado</button>
+    </form>
+
+    <script>
+        function geo()
+        {
+            var lado1 = document.getElementById("lado1").value;
+            var lado2 = document.getElementById("lado2").value;
+            var opcao = document.getElementById("opcao").value;
+
+            if(opcao == "quadrado")
+            {
+                return document.write("O Resultado final é: ", lado1*lado2);
+            }
+            else if(opcao == "circulo")
+            {
+                return document.write("O Resultado final é: ", (lado1**2)*3.14);
+
+            }
+            else if(opcao == "triangulo")
+            {
+                return document.write("O Resultado final é: ", (lado1*lado2)/2);
+            }
+            else
+            {
+                return document.write("Algo não deu certo!");
+            }
+        }
+    </script>
+</body>
+</html>

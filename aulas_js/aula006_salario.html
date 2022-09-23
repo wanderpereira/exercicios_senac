@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo Salario</title>
+    <style>
+        input {
+            display: block;
+            margin: 0.3em;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label>Digite seu nome</label>
+        <input type="text" id="nome">
+        <label>Informe seu salario bruto</label>
+        <input type="text" id="salario">
+        <label>Quantidade de Dependentes</label>
+        <input type="text" id="dependentes">
+        <button onclick="Calcular()"> Calcular</button>
+
+        <script>
+            function Calcular() {
+                var nome = document.getElementById("nome").value;
+                var salario = document.getElementById("salario").value;
+                var dependentes = document.getElementById("dependentes").value;
+                var ir = 0;
+                var inss = 0.11;
+                var beneficio = 300;
+                if (dependentes == 1) {
+                    ir = 0.05;
+                } else if (dependentes == 2) {
+                    ir = 0.04;
+                } if (dependentes > 2) {
+                    ir = 0.02;
+                }
+                document.write("Olá, ", nome + "<br>");
+                document.write("Salario bruto :: ", salario + "<br>");
+                document.write("Descontos :: ", (salario * inss) + (salario * ir) + "<br>");
+                document.write("Beneficios :: ", beneficio + "<br>");
+                document.write("Salario Liquido :: ", salario - (salario * inss) - (salario * ir) + beneficio + "<br>");
+            }
+        </script>
+    </form>
+</body>
+
+</html>

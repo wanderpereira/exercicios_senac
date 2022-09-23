@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        input {
+            display: block;
+            margin: 0.3em;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="">Qual a tabuada desejada?</label>
+        <input type="text" id="valor">
+        <button onclick="tabuada()">Calcular</button>
+    </form>
+
+    <script>
+        function tabuada() {
+            var valor = document.getElementById("valor").value;
+
+            for (i = 0; i <= valor; i++) {
+                for (n = 0; n <= 10; n++) {
+                    document.write("<br>" + i + " X " + n + " = " + i * n);
+                }
+                document.write("<hr>");
+            }
+        }
+    </script>
+</body>
+</html>

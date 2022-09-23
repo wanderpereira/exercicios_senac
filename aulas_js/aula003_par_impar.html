@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h1>Calcular Par ou Impar</h1>
+        <input type="text" id="num1" placeholder="Informe o Valor"><br><br>
+        <button onclick="calcular()">Calcular</button>
+    </form>
+</body>
+<script>
+    function calcular()
+    {
+        var valor = document.getElementById("num1").value;
+        var resultado = valor%2 == 0 ? "Par" : "Impar";
+        alert(resultado);
+    }
+
+   
+</script>
+</html>
